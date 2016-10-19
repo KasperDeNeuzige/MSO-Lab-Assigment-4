@@ -81,8 +81,9 @@ public class ShapeDrawingForm : Form
 
     private void OnPaint(object sender, PaintEventArgs e)
 	{
+        NormalDrawing drawing = new NormalDrawing(e.Graphics);
 		// Draw all the shapes
 		foreach(Shape shape in shapes)
-			shape.Draw(e.Graphics);
+			shape.Draw(drawing);
 	}
 }

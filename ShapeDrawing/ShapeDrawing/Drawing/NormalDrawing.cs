@@ -13,15 +13,16 @@ class NormalDrawing : IDrawing
     {
         this.canvas = canvas;
     }
-    public void DrawCircle(float x, float y, float size, Color color)
+    public void DrawCircle(int x, int y, int size, Color color)
     {
         pen = new Pen(color);
-        canvas.DrawEllipse(pen, new RectangleF(new PointF(x - size / 2, y - size / 2), new SizeF(size, size)));
+        canvas.DrawEllipse(pen, x, y, size, size);
     }
 
-    public void DrawPolyLine(float x1, float y1, float x2, float y2, Color color)
+    public void DrawPolyLine(Point[] points, Color color)
     {
         pen = new Pen(color);
-        canvas.DrawLine(pen, x1, y1, x2, y2);
+        for (int i = 1; i < points.Length; i++)
+            canvas.DrawLine(pen, points[i - 1], points[i]);
     }
 }

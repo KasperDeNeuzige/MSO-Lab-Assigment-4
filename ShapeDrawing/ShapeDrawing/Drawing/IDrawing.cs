@@ -5,8 +5,8 @@ using System.Text;
 
 using System.Drawing;
 
-interface IDrawing
+public interface IDrawing
 {
-    void DrawCircle(float x, float y, float size, Color color);
-    void DrawPolyLine(float x1, float y1, float x2, float y2, Color color);
+    void DrawCircle(int x, int y, int size, Color color);
+    void DrawPolyLine(Point[] points, Color color);
 }

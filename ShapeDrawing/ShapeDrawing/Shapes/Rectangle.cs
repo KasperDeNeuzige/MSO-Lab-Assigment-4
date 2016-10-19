@@ -12,21 +12,28 @@ class Rectangle : Shape
 	private int y;
 	private int width;
 	private int height;
+    private Color color = Color.Black;
+    private Point[] points;
 
     public Rectangle(int x, int y, int width, int height)
     {
-		this.x = x;
-		this.y = y;
-		this.width = width;
-		this.height = height;
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+
     }
     
-	public override void Draw()
+	public override void Draw(IDrawing d)
     {
-        d.DrawPolyLine(x        , y         , x + width, y         , color);
-        d.DrawPolyLine(x + width, y         , x + width, y + height, color);
-        d.DrawPolyLine(x + width, y + height, x        , y + height, color);
-        d.DrawPolyLine(x        , y + height, x        , y        , color);
+        points = new Point[5];
+        points[0] = new Point(x, y);
+        points[1] = new Point(x + width, y);
+        points[2] = new Point(x + width, y + height);
+        points[3] = new Point(x, y + height);
+        points[4] = new Point(x, y);
+
+        d.DrawPolyLine(points, color);
     }
 }
 

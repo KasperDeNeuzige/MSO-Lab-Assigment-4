@@ -19,12 +19,13 @@ public class Star : Shape
 		this.y = y;
 		this.width = width;
 		this.height = height;
+        this.color = color;
 	}
 
-	public override void Draw ()
+	public override void Draw (IDrawing d)
 	{
         int numPoints = 5;
-		Point[] pts = new Point[numPoints];
+		Point[] pts = new Point[numPoints + 1];
 		double rx = width / 2;
 		double ry = height / 2;
 		double cx = x + rx;
@@ -33,23 +34,14 @@ public class Star : Shape
 		double theta = -Math.PI / 2;
 		double dtheta = 4 * Math.PI / numPoints;
 		int i;
-		for (i = 0; i < numPoints; i++) 
+		for (i = 0; i < numPoints + 1; i++) 
 		{
 			pts [i] = new Point (
 				Convert.ToInt32(cx + rx * Math.Cos (theta)),
 				Convert.ToInt32(cy + ry * Math.Sin (theta)));
 			theta += dtheta;
 		}
-
-		for (i = 0; i < numPoints; i++) 
-		{
-			d.DrawPolyLine(pts[i].X,
-                           pts[i].Y,
-                           pts[(i+1) % numPoints].X,
-                           pts[(i+1) % numPoints].Y,
-                           color);
-		}
-		
+        d.DrawPolyLine(pts, color);
 	}
 }
 
