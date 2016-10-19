@@ -1,0 +1,3 @@
+C:\Users\Kasper!\Documents\GitHub\MSO-Lab-Assigment-4\ShapeDrawing\ShapeDrawing\obj\x86\Debug\ShapeDrawing.csprojResolveAssemblyReference.cache
+C:\Users\Kasper!\Documents\GitHub\MSO-Lab-Assigment-4\ShapeDrawing\ShapeDrawing\obj\x86\Debug\ShapeDrawing.Properties.Resources.resources
+C:\Users\Kasper!\Documents\GitHub\MSO-Lab-Assigment-4\ShapeDrawing\ShapeDrawing\obj\x86\Debug\ShapeDrawing.csproj.GenerateResource.Cache
