@@ -61,7 +61,7 @@ public class ShapeDrawingForm : Form
 		Stream stream;
 		SaveFileDialog saveFileDialog = new SaveFileDialog();
 
-		saveFileDialog.Filter = "TeX files|(*.tex)";
+		//saveFileDialog.Filter = "TeX files|(*.tex)";
 		saveFileDialog.RestoreDirectory = true;
 		
 		if(saveFileDialog.ShowDialog() == DialogResult.OK)
@@ -72,8 +72,14 @@ public class ShapeDrawingForm : Form
                 //   commands to draw the shapes
                 using(StreamWriter writer = new StreamWriter(stream))
                 {
+                    // draw initial stuff
+                    SVGDrawing drawing = new SVGDrawing(writer);
+                    foreach (Shape shape in shapes)
+                        shape.Draw(drawing);
                         // Write strings to the file here using:
                         //   writer.WriteLine("Hello World!");
+
+                    // draw ending stuff
                 }				
 			}
 		}
