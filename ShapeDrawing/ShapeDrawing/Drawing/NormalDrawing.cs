@@ -16,6 +16,7 @@ class NormalDrawing : IDrawing
     public void DrawCircle(int x, int y, int size, Color color)
     {
         pen = new Pen(color);
+        // Note that we set the x and y off by the radius, this makes the drawing in line with the SVG drawing (and the example in the pdf)
         canvas.DrawEllipse(pen, x-size, y-size, size*2, size*2);
     }
 
