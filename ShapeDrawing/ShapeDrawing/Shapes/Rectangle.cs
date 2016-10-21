@@ -7,21 +7,15 @@ using System.Text;
 
 class Rectangle : Shape
 {
-
-    private int x;
-	private int y;
 	private int width;
 	private int height;
     private Color color = Color.Black;
     private Point[] points;
 
-    public Rectangle(int x, int y, int width, int height)
+    public Rectangle(int x, int y, int width, int height) : base (x, y)
     {
-        this.x = x;
-        this.y = y;
         this.width = width;
         this.height = height;
-
     }
     
 	public override void Draw(IDrawing d)

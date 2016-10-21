@@ -15,11 +15,10 @@ public class Parser
 		List<Shape> shapes = new List<Shape>();
 		foreach(XmlNode shape in doc.SelectNodes("/shapes/*"))
 		{
-			string type = shape.Name;
             int width, height;
             int x = int.Parse(shape.Attributes["x"].Value);
             int y = int.Parse(shape.Attributes["y"].Value);
-            switch (type)
+            switch (shape.Name)
             {
                 case "rectangle":
 					width = int.Parse(shape.Attributes["width"].Value);

@@ -7,16 +7,14 @@ using System.Text;
 public class Star : Shape
 {
 
-	private int x;
-	private int y;
+	//private int x;
+	//private int y;
 	private int width;
 	private int height;
     private Color color = Color.Black;
 
-	public Star (int x, int y, int width, int height)
+	public Star (int x, int y, int width, int height) : base(x, y)
 	{
-		this.x = x;
-		this.y = y;
 		this.width = width;
 		this.height = height;
         this.color = color;
