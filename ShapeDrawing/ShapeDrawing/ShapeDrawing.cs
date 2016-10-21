@@ -71,15 +71,15 @@ public class ShapeDrawingForm : Form
 				// Insert code here that generates the string of LaTeX
                 //   commands to draw the shapes
                 using(StreamWriter writer = new StreamWriter(stream))
-                {
-                    // draw initial stuff
+                {         
                     SVGDrawing drawing = new SVGDrawing(writer);
+                    // draw initial svg requirements          
+                    drawing.StartDocument();
+                    // draw shapes
                     foreach (Shape shape in shapes)
                         shape.Draw(drawing);
-                        // Write strings to the file here using:
-                        //   writer.WriteLine("Hello World!");
-
-                    // draw ending stuff
+                    // draw ending svg requirement
+                    drawing.EndDocument();
                 }				
 			}
 		}
