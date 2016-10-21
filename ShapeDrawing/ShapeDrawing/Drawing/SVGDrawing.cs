@@ -32,11 +32,11 @@ class SVGDrawing : IDrawing
 
     public void DrawPolyLine(Point[] points, Color color)
     {
-        string polyLineString = "< polyline points = \"";
+        string polyLineString = "  <polyline points=\"";
         polyLineString += points[0].X + "," + points[0].Y;
         for (int i = 1; i < points.Length; i++)
             polyLineString += " " + points[i].X + "," + points[i].Y;
-        polyLineString += "\"fill:none;stroke:" + color.Name + ";stroke-width:1\" />"; 
+        polyLineString += "\"" + Environment.NewLine + "    style=\"fill:none;stroke:" + color.Name.ToLower() + ";stroke-width:1\" />"; 
 
         writer.WriteLine(polyLineString);
 //< polyline points = "150,100 250,100 250,150 150,150 150,100"

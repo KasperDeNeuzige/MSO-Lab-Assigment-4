@@ -16,7 +16,7 @@ class NormalDrawing : IDrawing
     public void DrawCircle(int x, int y, int size, Color color)
     {
         pen = new Pen(color);
-        canvas.DrawEllipse(pen, x, y, size, size);
+        canvas.DrawEllipse(pen, x-size, y-size, size*2, size*2);
     }
 
     public void DrawPolyLine(Point[] points, Color color)
