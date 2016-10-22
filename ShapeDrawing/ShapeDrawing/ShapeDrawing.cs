@@ -55,21 +55,18 @@ public class ShapeDrawingForm : Form
 
     }
 
-    // What to do when the user wants to export a TeX file
+    // What to do when the user wants to export a SVG file
 	private void exportHandler (object sender, EventArgs e)
 	{
 		Stream stream;
 		SaveFileDialog saveFileDialog = new SaveFileDialog();
-
-		//saveFileDialog.Filter = "TeX files|(*.tex)";
+        
 		saveFileDialog.RestoreDirectory = true;
 		
 		if(saveFileDialog.ShowDialog() == DialogResult.OK)
 		{
 			if((stream = saveFileDialog.OpenFile()) != null)
 			{
-				// Insert code here that generates the string of LaTeX
-                //   commands to draw the shapes
                 using(StreamWriter writer = new StreamWriter(stream))
                 {         
                     SVGDrawing drawing = new SVGDrawing(writer);

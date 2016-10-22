@@ -9,9 +9,9 @@ class Circle : Shape
     private int size;
     private Color color = Color.Black;
 
-    public Circle(int x, int y, int size) : base (x, y)
+    public Circle(int x, int y, int width, int height, Color c) : base(x, y, width, height, c)
     {
-        this.size = size;
+        size = width;
     }
 
     public override void Draw(IDrawing d)

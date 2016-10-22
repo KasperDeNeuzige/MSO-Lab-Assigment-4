@@ -6,15 +6,8 @@ using System.Text;
 
 public class Star : Shape
 {
-	private int width;
-	private int height;
-    private Color color = Color.Black;
-
-	public Star (int x, int y, int width, int height) : base(x, y)
+	public Star (int x, int y, int width, int height, Color color) : base(x, y, width, height, color)
 	{
-		this.width = width;
-		this.height = height;
-        this.color = color;
 	}
 
 	public override void Draw (IDrawing d)
@@ -36,7 +29,7 @@ public class Star : Shape
 				Convert.ToInt32(cy + ry * Math.Sin (theta)));
 			theta += dtheta;
 		}
-        d.DrawPolyLine(pts, color);
+        d.DrawPolyLine(pts, c);
 	}
 }
 

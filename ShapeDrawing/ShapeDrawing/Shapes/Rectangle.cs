@@ -7,18 +7,13 @@ using System.Text;
 
 class Rectangle : Shape
 {
-	private int width;
-	private int height;
-    private Color color = Color.Black;
-    private Point[] points;
+    private Point[] points;    
 
-    public Rectangle(int x, int y, int width, int height) : base (x, y)
+    public Rectangle(int x, int y, int width, int height, Color c) : base(x, y, width, height, c)
     {
-        this.width = width;
-        this.height = height;
     }
-    
-	public override void Draw(IDrawing d)
+
+    public override void Draw(IDrawing d)
     {
         points = new Point[5];
         points[0] = new Point(x, y);
@@ -27,7 +22,7 @@ class Rectangle : Shape
         points[3] = new Point(x, y + height);
         points[4] = new Point(x, y);
 
-        d.DrawPolyLine(points, color);
+        d.DrawPolyLine(points, c);
     }
 }
 
