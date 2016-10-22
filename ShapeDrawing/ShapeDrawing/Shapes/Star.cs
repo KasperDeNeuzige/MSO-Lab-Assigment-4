@@ -6,9 +6,6 @@ using System.Text;
 
 public class Star : Shape
 {
-
-	//private int x;
-	//private int y;
 	private int width;
 	private int height;
     private Color color = Color.Black;
